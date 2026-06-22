@@ -25,3 +25,27 @@ try:
 except Exception as e:
         logger.exception(e)
         raise e
+
+
+import tensorflow as tf
+from cnnClassifier import logger
+from cnnClassifier.pipeline.stage_03_training import ModelTrainingPipeline # Adjust import path based on your setup
+
+STAGE_NAME = "Training"
+
+try: 
+    logger.info(f"*******************")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    
+    # 1. Clear backend graph and isolate the environment before initialization
+    tf.keras.backend.clear_session()
+    tf.config.run_functions_eagerly(True)
+    
+    model_trainer = ModelTrainingPipeline()
+    model_trainer.main()
+    
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+    
+except Exception as e:
+    logger.exception(e)
+    raise e
