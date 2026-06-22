@@ -1,6 +1,4 @@
-## End to End kindney desease prediction
-
-Kidney-Disease-Classification-MLflow-DVC
+# Chicken-Disease-Classification--Project
 
 
 ## Workflows
@@ -14,7 +12,7 @@ Kidney-Disease-Classification-MLflow-DVC
 7. Update the pipeline 
 8. Update the main.py
 9. Update the dvc.yaml
-10. app.py
+
 
 # How to run?
 ### STEPS:
@@ -22,7 +20,7 @@ Kidney-Disease-Classification-MLflow-DVC
 Clone the repository
 
 ```bash
-https://github.com/bineet12345/dl-project1/tree/main
+https://github.com/entbappy/Chicken-Disease-Classification--Project
 ```
 ### STEP 01- Create a conda environment after opening the repository
 
@@ -40,6 +38,7 @@ conda activate cnncls
 pip install -r requirements.txt
 ```
 
+
 ```bash
 # Finally run the following command
 python app.py
@@ -51,61 +50,11 @@ open up you local host and port
 ```
 
 
-
-
-
-
-## MLflow
-
-- [Documentation](https://mlflow.org/docs/latest/index.html)
-
-- [MLflow tutorial](https://youtu.be/qdcHHrsXA48?si=bD5vDS60akNphkem)
-
-##### cmd
-- mlflow ui
-
-### dagshub
-[dagshub](https://dagshub.com/)
-
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/Kidney-Disease-Classification-MLflow-DVC.mlflow \
-MLFLOW_TRACKING_USERNAME=entbappy \
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 \
-python script.py
-
-Run this to export as env variables:
-
-```bash
-
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/Kidney-Disease-Classification-MLflow-DVC.mlflow
-
-export MLFLOW_TRACKING_USERNAME=entbappy 
-
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
-
-```
-
-
 ### DVC cmd
 
 1. dvc init
 2. dvc repro
 3. dvc dag
-
-
-## About MLflow & DVC
-
-MLflow
-
- - Its Production Grade
- - Trace all of your expriements
- - Logging & taging your model
-
-
-DVC 
-
- - Its very lite weight for POC only
- - lite weight expriements tracker
- - It can perform Orchestration (Creating Pipelines)
 
 
 
@@ -181,3 +130,29 @@ DVC
     AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
 
     ECR_REPOSITORY_NAME = simple-app
+
+
+
+
+# AZURE-CICD-Deployment-with-Github-Actions
+
+## Save pass:
+
+s3cEZKH5yytiVnJ3h+eI3qhhzf9q1vNwEi6+q+WGdd+ACRCZ7JD6
+
+
+## Run from terminal:
+
+docker build -t chickenapp.azurecr.io/chicken:latest .
+
+docker login chickenapp.azurecr.io
+
+docker push chickenapp.azurecr.io/chicken:latest
+
+
+## Deployment Steps:
+
+1. Build the Docker image of the Source Code
+2. Push the Docker image to Container Registry
+3. Launch the Web App Server in Azure 
+4. Pull the Docker image from the container registry to Web App server and run
